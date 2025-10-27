@@ -1,8 +1,9 @@
 {
-  "name": "hackmd-mcp",
+  "name": "@stanley2058/hackmd-mcp",
+  "version": "1.0.0",
   "module": "index.ts",
   "type": "module",
-  "private": true,
+  "license": "MIT",
   "bin": {
     "hackmd-mcp": "./dist/index.js"
   },
@@ -19,5 +20,9 @@
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stanley2058/simple-hackmd-mcp.git"
   }
 }
