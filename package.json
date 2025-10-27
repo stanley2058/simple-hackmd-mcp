@@ -1,6 +1,6 @@
 {
   "name": "@stanley2058/hackmd-mcp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "module": "index.ts",
   "type": "module",
   "license": "MIT",
