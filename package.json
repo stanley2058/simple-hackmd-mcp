@@ -8,7 +8,7 @@
     "hackmd-mcp": "dist/index.js"
   },
   "scripts": {
-    "build": "bun build.ts"
+    "build": "bun build.ts && chmod +x dist/index.js"
   },
   "devDependencies": {
     "@hackmd/api": "^2.5.0",
