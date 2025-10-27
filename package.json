@@ -1,0 +1,23 @@
+{
+  "name": "hackmd-mcp",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "hackmd-mcp": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "bun build.ts"
+  },
+  "devDependencies": {
+    "@hackmd/api": "^2.5.0",
+    "@modelcontextprotocol/sdk": "^1.20.2",
+    "@types/bun": "latest",
+    "@types/express": "^5.0.4",
+    "express": "^5.1.0",
+    "zod": "3"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
