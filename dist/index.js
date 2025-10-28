@@ -57952,9 +57952,46 @@ var apiKey = process.env.HACKMD_API_KEY;
 if (!apiKey)
   throw new Error("HACKMD_API_KEY not set");
 var client = new API(apiKey);
+globalThis.PACKAGE_VERSION = "dev";
 var server = new McpServer({
   name: "hackmd-mcp",
-  version: "1.0.0"
+  version: "1.0.4"
+});
+server.registerTool("get_user_info", {
+  title: "HackMD Get User Info",
+  description: "Get user info and team list from HackMD"
+}, async () => {
+  try {
+    const user = await client.getMe();
+    return {
+      content: [
+        {
+          type: "text",
+          text: JSON.stringify({
+            user: {
+              id: user.id,
+              name: user.name,
+              path: user.userPath
+            },
+            teams: user.teams.map((team) => ({
+              id: team.id,
+              name: team.name,
+              path: team.path,
+              visibility: team.visibility
+            }))
+          })
+        }
+      ]
+    };
+  } catch (e) {
+    console.error(e);
+    return {
+      isError: true,
+      content: [
+        { type: "text", text: e instanceof Error ? e.message : `${e}` }
+      ]
+    };
+  }
 });
 server.registerTool("get_workspace_notes", {
   title: "HackMD Get Workspace Notes",
